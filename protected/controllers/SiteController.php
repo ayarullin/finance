@@ -17,6 +17,8 @@ class SiteController extends Controller
 
         $bills = $billModel->findAll();
 
+	$billModel->date_time = date('Y-m-d H:i:s');
+
         if(isset($_POST['Bill']))
         {
             $billModel->attributes=$_POST['Bill'];

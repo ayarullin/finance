@@ -43,9 +43,10 @@ class Bill extends CActiveRecord
 			array('category_id', 'numerical', 'integerOnly'=>true),
 			array('sum', 'length', 'max'=>10),
 			array('description', 'safe'),
+			array('date_time', 'date', 'format' => 'yyyy-MM-dd HH:mm:ss'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('bill_id, description, sum, category_id', 'safe', 'on'=>'search'),
+			array('bill_id, description, sum, date_time, category_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,6 +71,7 @@ class Bill extends CActiveRecord
 			'bill_id' => 'Bill',
 			'description' => 'Description',
 			'sum' => 'Sum',
+			'date_time' => 'Date and Time',
 			'category_id' => 'Category',
 		);
 	}
@@ -88,6 +90,7 @@ class Bill extends CActiveRecord
 		$criteria->compare('bill_id',$this->bill_id);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('sum',$this->sum,true);
+		$criteria->compare('date_time',$this->date_time,true);
 		$criteria->compare('category_id',$this->category_id);
 
 		return new CActiveDataProvider($this, array(

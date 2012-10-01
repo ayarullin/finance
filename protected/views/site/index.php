@@ -22,6 +22,12 @@
     </div>
 
     <div class="row">
+        <?php echo $form->labelEx($model,'date_time'); ?>
+        <?php echo $form->textField($model,'date_time'); ?>
+        <?php echo $form->error($model,'date_time'); ?>
+    </div>
+
+    <div class="row">
         <?php echo $form->labelEx($model,'description'); ?>
         <?php echo $form->textField($model,'description'); ?>
         <?php echo $form->error($model,'description'); ?>
@@ -41,6 +47,7 @@
     <tr>
         <td><?= $bill->bill_id ?></td>
         <td><?= $bill->sum ?></td>
+	<td><?= $bill->date_time ?></td>
         <td><?= $bill->description ?></td>
         <td><?= $categoryNames[$bill->category_id] ?></td>
     </tr>
