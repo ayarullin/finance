@@ -7,6 +7,7 @@
  * @property integer $bill_id
  * @property string $description
  * @property string $sum
+ * @property string $date_time
  * @property integer $category_id
  *
  * The followings are the available model relations:
