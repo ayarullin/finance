@@ -44,11 +44,6 @@ class SiteController extends Controller
 		}
 	}
 
-    public function actionTest()
-    {
-        echo 'asdfasdf';
-    }
-
 	// Uncomment the following methods and override them if needed
 	/*
 	public function filters()
