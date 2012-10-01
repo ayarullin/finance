@@ -5,7 +5,6 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
         $billModel = new Bill();
-
         $categoryModel = new Category();
 
         $categoryNames = array();
@@ -15,20 +14,31 @@ class SiteController extends Controller
             $categoryNames[$category->category_id] = $category->name;
         }
 
+        $categoryNames[0] = '...or create new:';
+
         $bills = $billModel->findAll(array('order' => 'date_time DESC'));
 
-	$billModel->date_time = date('Y-m-d H:i:s');
+	    $billModel->date_time = date('Y-m-d H:i:s');
 
         if(isset($_POST['Bill']))
         {
             $billModel->attributes=$_POST['Bill'];
+
+            if (0 == $billModel->category_id)
+            {
+                $categoryModel->name = $_POST['Category']['name'];
+                $categoryModel->save();
+
+                $billModel->category_id = $categoryModel->category_id;
+            }
+
             if($billModel->validate())
             {
                 $billModel->save();
                 $this->redirect('/site/index');
             }
         }
-        $this->render('index',array('model'=>$billModel, 'bills' => $bills, 'categoryNames' => $categoryNames));
+        $this->render('index',array('billModel'=>$billModel, 'categoryModel' => $categoryModel, 'bills' => $bills, 'categoryNames' => $categoryNames));
 	}
 
 	public function actionError()

@@ -7,30 +7,34 @@
 
     <?php /** @var CActiveForm $form */ ?>
 
-    <?php echo $form->errorSummary($model); ?>
+    <?php echo $form->errorSummary($billModel); ?>
 
     <div class="row">
-        <?php echo $form->labelEx($model,'category_id'); ?>
-        <?php echo $form->listBox($model, 'category_id', $categoryNames, array('size' => 1)) ?>
-        <?php echo $form->error($model,'category_id'); ?>
+        <?php echo $form->labelEx($billModel,'category_id'); ?>
+        <?php echo $form->listBox($billModel, 'category_id', $categoryNames, array('size' => 1)) ?>
+        <?php echo $form->error($billModel,'category_id'); ?>
+
+
+        <?php echo $form->textField($categoryModel, 'name') ?>
+        <?php echo $form->error($categoryModel,'name'); ?>
     </div>
 
     <div class="row">
-        <?php echo $form->labelEx($model,'sum'); ?>
-        <?php echo $form->textField($model,'sum'); ?>
-        <?php echo $form->error($model,'sum'); ?>
+        <?php echo $form->labelEx($billModel,'sum'); ?>
+        <?php echo $form->textField($billModel,'sum'); ?>
+        <?php echo $form->error($billModel,'sum'); ?>
     </div>
 
     <div class="row">
-        <?php echo $form->labelEx($model,'date_time'); ?>
-        <?php echo $form->textField($model,'date_time'); ?>
-        <?php echo $form->error($model,'date_time'); ?>
+        <?php echo $form->labelEx($billModel,'date_time'); ?>
+        <?php echo $form->textField($billModel,'date_time'); ?>
+        <?php echo $form->error($billModel,'date_time'); ?>
     </div>
 
     <div class="row">
-        <?php echo $form->labelEx($model,'description'); ?>
-        <?php echo $form->textField($model,'description'); ?>
-        <?php echo $form->error($model,'description'); ?>
+        <?php echo $form->labelEx($billModel,'description'); ?>
+        <?php echo $form->textField($billModel,'description'); ?>
+        <?php echo $form->error($billModel,'description'); ?>
     </div>
 
 
