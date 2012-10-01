@@ -15,7 +15,7 @@ class SiteController extends Controller
             $categoryNames[$category->category_id] = $category->name;
         }
 
-        $bills = $billModel->findAll();
+        $bills = $billModel->findAll(array('order' => 'date_time DESC'));
 
 	$billModel->date_time = date('Y-m-d H:i:s');
 
