@@ -29,7 +29,7 @@
 
 
     <div class="row buttons">
-        <?php echo CHtml::submitButton('Submit'); ?>
+        <?php echo CHtml::submitButton('Send'); ?>
     </div>
 
 <?php $this->endWidget(); ?>

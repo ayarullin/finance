@@ -68,9 +68,9 @@ class Bill extends CActiveRecord
 	{
 		return array(
 			'bill_id' => 'Bill',
-			'description' => 'Описание',
-			'sum' => 'Сумма',
-			'category_id' => 'Категория',
+			'description' => 'Description',
+			'sum' => 'Sum',
+			'category_id' => 'Category',
 		);
 	}
 
