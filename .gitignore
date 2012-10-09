@@ -1,4 +1,5 @@
 protected/config/main.php
+protected/config/console.php
 assets/
 protected/runtime/
 themes/classic/views/
